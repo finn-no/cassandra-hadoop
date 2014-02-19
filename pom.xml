@@ -41,8 +41,8 @@
     </dependencies>
 
   <scm>
-    <connection>scm:git:https://github.com/michaelsembwever/cassandra-hadoop.git</connection>
-    <url>https://github.com/michaelsembwever/cassandra-hadoop</url>
+    <connection>scm:git:https://github.com/bakaleks/cassandra-hadoop.git</connection>
+    <url>https://github.com/bakaleks/cassandra-hadoop</url>
     <tag>HEAD</tag>
   </scm>
 </project>
