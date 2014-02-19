@@ -472,6 +472,10 @@ public abstract class AbstractCassandraStorage extends LoadFunc implements Store
         return out;
     }
 
+    public void cleanupOnSuccess(String location, Job job) throws IOException 
+    {
+    }
+
     public void cleanupOnFailure(String failure, Job job)
     {
     }
