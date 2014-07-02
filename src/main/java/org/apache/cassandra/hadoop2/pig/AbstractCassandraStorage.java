@@ -274,22 +274,22 @@ public abstract class AbstractCassandraStorage extends LoadFunc implements Store
     /** set hadoop cassandra connection settings */
     protected void setConnectionInformation() throws IOException
     {
-        if (System.getenv(PIG_RPC_PORT) != null)
-        {
-            ConfigHelper.setInputRpcPort(conf, System.getenv(PIG_RPC_PORT));
-            ConfigHelper.setOutputRpcPort(conf, System.getenv(PIG_RPC_PORT));
-        }
+//        if (System.getenv(PIG_RPC_PORT) != null)
+//        {
+//            ConfigHelper.setInputRpcPort(conf, System.getenv(PIG_RPC_PORT));
+//            ConfigHelper.setOutputRpcPort(conf, System.getenv(PIG_RPC_PORT));
+//        }
 
         if (System.getenv(PIG_INPUT_RPC_PORT) != null)
             ConfigHelper.setInputRpcPort(conf, System.getenv(PIG_INPUT_RPC_PORT));
         if (System.getenv(PIG_OUTPUT_RPC_PORT) != null)
             ConfigHelper.setOutputRpcPort(conf, System.getenv(PIG_OUTPUT_RPC_PORT));
 
-        if (System.getenv(PIG_INITIAL_ADDRESS) != null)
-        {
-            ConfigHelper.setInputInitialAddress(conf, System.getenv(PIG_INITIAL_ADDRESS));
-            ConfigHelper.setOutputInitialAddress(conf, System.getenv(PIG_INITIAL_ADDRESS));
-        }
+//        if (System.getenv(PIG_INITIAL_ADDRESS) != null)
+//        {
+//            ConfigHelper.setInputInitialAddress(conf, System.getenv(PIG_INITIAL_ADDRESS));
+//            ConfigHelper.setOutputInitialAddress(conf, System.getenv(PIG_INITIAL_ADDRESS));
+//        }
         if (System.getenv(PIG_INPUT_INITIAL_ADDRESS) != null)
             ConfigHelper.setInputInitialAddress(conf, System.getenv(PIG_INPUT_INITIAL_ADDRESS));
         if (System.getenv(PIG_OUTPUT_INITIAL_ADDRESS) != null)
@@ -470,6 +470,10 @@ public abstract class AbstractCassandraStorage extends LoadFunc implements Store
         }
         out.flip();
         return out;
+    }
+
+    public void cleanupOnSuccess(String location, Job job) throws IOException 
+    {
     }
 
     public void cleanupOnFailure(String failure, Job job)
